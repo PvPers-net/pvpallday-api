@@ -22,7 +22,7 @@ class Video extends Model
     }
 
     public function tags() {
-        return $this->belongsToMany('App\Models\Tags\Tag', 'tag_video', 'tag_id', 'video_id');
+        return $this->belongsToMany('App\Models\Tags\Tag', 'tag_video', 'video_id', 'tag_id');
     }
 
     public function nl2br() {

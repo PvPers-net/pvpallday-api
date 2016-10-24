@@ -6,7 +6,7 @@ use App\Http\Controllers\APIController;
 use App\Models\Videos\Video;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-
+use Input;
 use App\Http\Requests;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -52,8 +52,12 @@ class VideosController extends APIController
     public function show(string $handle) {
         try {
             /** @var Video $video */
-            $video = Video::where('handle', '=', $handle)->firstOrFail();
-            $video->nl2br();
+            $video = Video::with(['tags' => function ($query) {
+                $query->select('tag');
+            }])->where('handle', '=', $handle)->firstOrFail();
+            if (!Input::has('html') || Input::get('html', TRUE) == 1) {
+                $video->nl2br();
+            }
             return $this->response->array($video->toArray());
         } catch (ModelNotFoundException $e) {
             throw new NotFoundHttpException("Video '{$handle}' not found.");

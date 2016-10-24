@@ -18,7 +18,10 @@ $api->version('v1', [], function ($api) {
 
     $api->group(['prefix' => 'videos'], function($api) {
 
-        $api->get('{handle}', 'App\Http\Controllers\Videos\VideosController@show');
+        $api->get('{handle}', [
+            'uses' => 'App\Http\Controllers\Videos\VideosController@show',
+            'as' => 'api.v1.videos.show'
+        ]);
 
     });
 
