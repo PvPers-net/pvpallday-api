@@ -52,14 +52,22 @@ class VideosController extends APIController
     public function show(string $handle) {
         try {
             /** @var Video $video */
-            $video = Video::with(['tags' => function ($query) {
-                $query->select('tag');
-            }])->where('handle', '=', $handle)->firstOrFail();
+            $video = Video::with(
+                [
+                    'tags' => function ($query) {
+                        $query->select('tag');
+                    },
+                    'submitter',
+                    'owner',
+                    'host'
+                ]
+            )->where('handle', '=', $handle)->firstOrFail();
 
             // Allow Description to be \n or <br /> depending on 'html'
             if (!Input::has('html') || Input::get('html', TRUE) == 1) {
                 $video->nl2br();
             }
+
             return $this->response->array($video->toArray());
         } catch (ModelNotFoundException $e) {
             // 404 Error
