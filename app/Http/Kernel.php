@@ -57,6 +57,6 @@ class Kernel extends HttpKernel
          * API Guard
          * https://github.com/chrisbjr/api-guard
          */
-//        'apiguard' => \Chrisbjr\ApiGuard\Http\Middleware\ApiGuard::class,
+        'apiguard' => \Chrisbjr\ApiGuard\Http\Middleware\ApiGuard::class,
     ];
 }

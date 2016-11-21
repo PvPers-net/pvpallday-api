@@ -188,14 +188,18 @@ return [
          * https://github.com/dingo/api
          */
         Dingo\Api\Provider\LaravelServiceProvider::class,
-        // end DingoAPI
 
         /**
          * API Guard
          * https://github.com/chrisbjr/api-guard
          */
-//        Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
-        // end API Guard
+        Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
+
+        /**
+         * JWT Auth
+         * https://github.com/tymondesigns/jwt-auth
+         */
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 
     ],
 
@@ -255,8 +259,14 @@ return [
          * API Guard
          * https://github.com/chrisbjr/api-guard
          */
-//        'ApiGuardAuth' => \Chrisbjr\ApiGuard\Facades\ApiGuardAuth::class,
-        // end API Guard
+        'ApiGuardAuth' => \Chrisbjr\ApiGuard\Facades\ApiGuardAuth::class,
+
+        /**
+         * JWT Auth
+         * https://github.com/tymondesigns/jwt-auth
+         */
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
     ],
 

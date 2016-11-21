@@ -4,9 +4,71 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "89f7cfc2680b5519be472f49826d7a30",
-    "content-hash": "0a37433ad113436701ab5215d091b07c",
+    "hash": "2e2167e0b3c231246bc45eb0b2c824b2",
+    "content-hash": "9f58a7b51eff3f4868d09902ae884b97",
     "packages": [
+        {
+            "name": "chrisbjr/api-guard",
+            "version": "v3.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chrisbjr/api-guard.git",
+                "reference": "04a3bf2c108309867b1465e67dc97b67c45ebd16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chrisbjr/api-guard/zipball/04a3bf2c108309867b1465e67dc97b67c45ebd16",
+                "reference": "04a3bf2c108309867b1465e67dc97b67c45ebd16",
+                "shasum": ""
+            },
+            "require": {
+                "ellipsesynergie/api-response": "*",
+                "illuminate/auth": "~5.0",
+                "illuminate/contracts": "~5.0",
+                "illuminate/database": "~5.0",
+                "illuminate/http": "~5.0",
+                "illuminate/support": "~5.0",
+                "nesbot/carbon": "^1.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "cartalyst/sentinel": "2.0.*",
+                "illuminate/console": "~5.0",
+                "illuminate/database": "~5.0",
+                "illuminate/routing": "~5.0",
+                "mockery/mockery": "0.9.*",
+                "october/rain": "dev-stable",
+                "phpunit/phpunit": "^4.0 || ^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chrisbjr\\ApiGuard\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Chris Bautista",
+                    "email": "chrisbjr@gmail.com"
+                },
+                {
+                    "name": "Mark Jayson Fuentes",
+                    "email": "awkwardusername@gmail.com"
+                }
+            ],
+            "description": "A simple way of authenticating your APIs with API keys using Laravel",
+            "homepage": "https://github.com/chrisbjr/api-guard",
+            "keywords": [
+                "api",
+                "api authentication",
+                "api keys",
+                "json",
+                "laravel",
+                "rest"
+            ],
+            "time": "2016-10-26 02:24:39"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -413,6 +475,59 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "ellipsesynergie/api-response",
+            "version": "0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ellipsesynergie/api-response.git",
+                "reference": "8e0a673d9e30c95751228399962f3a5ba40687e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ellipsesynergie/api-response/zipball/8e0a673d9e30c95751228399962f3a5ba40687e1",
+                "reference": "8e0a673d9e30c95751228399962f3a5ba40687e1",
+                "shasum": ""
+            },
+            "require": {
+                "league/fractal": "~0.11",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EllipseSynergie\\ApiResponse\\": "src",
+                    "EllipseSynergie\\ApiResponse\\Tests\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Beaudoin",
+                    "email": "maxime.beaudoin@ellipse-synergie.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Phil Sturgeon",
+                    "email": "email@philsturgeon.co.uk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple package to handle response properly in your API",
+            "homepage": "https://github.com/ellipsesynergie/api-response",
+            "keywords": [
+                "api",
+                "fractal",
+                "json"
+            ],
+            "time": "2014-12-10 19:27:39"
         },
         {
             "name": "jakub-onderka/php-console-color",

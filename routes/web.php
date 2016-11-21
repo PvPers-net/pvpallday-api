@@ -26,3 +26,6 @@ $api->version('v1', [], function ($api) {
     });
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
